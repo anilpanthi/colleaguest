@@ -47,7 +47,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   redirects,
   experimental: {
-    serverComponentsExternalPackages: ['@payloadcms/next'],
+    serverComponentsExternalPackages: ['@payloadcms/next', '@payloadcms/db-postgres', 'drizzle-kit'],
   },
   turbopack: {
     root: path.resolve(dirname),
