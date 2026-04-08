@@ -9,12 +9,17 @@ type Global = keyof Config['globals']
 async function getGlobal(slug: Global, depth = 0) {
   const payload = await getPayload({ config: configPromise })
 
-  const global = await payload.findGlobal({
-    slug,
-    depth,
-  })
+  try {
+    const global = await payload.findGlobal({
+      slug,
+      depth,
+    })
 
-  return global
+    return global
+  } catch (error) {
+    console.error(`Error fetching global ${slug}:`, error)
+    return null
+  }
 }
 
 /**
