@@ -17,7 +17,8 @@ async function getGlobal(slug: Global, depth = 0) {
 
     return global
   } catch (error) {
-    if (error instanceof Error && (error as any).code === '42P01') {
+    const errorCode = (error as any)?.code || (error as any)?.cause?.code
+    if (errorCode === '42P01') {
       return null
     }
     console.error(`Error fetching global ${slug}:`, error)
