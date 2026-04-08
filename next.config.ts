@@ -46,6 +46,7 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   redirects,
+  transpilePackages: ['react-image-crop'],
   experimental: {
     serverComponentsExternalPackages: ['@payloadcms/next', '@payloadcms/db-postgres', 'drizzle-kit'],
   },
