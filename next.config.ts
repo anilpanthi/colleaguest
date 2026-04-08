@@ -46,10 +46,8 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   redirects,
-  transpilePackages: ['react-image-crop'],
-  experimental: {
-    serverComponentsExternalPackages: ['@payloadcms/next', '@payloadcms/db-postgres', 'drizzle-kit'],
-  },
+  serverExternalPackages: ['@payloadcms/db-postgres', 'drizzle-kit'],
+  transpilePackages: ['react-image-crop', '@payloadcms/next', '@payloadcms/ui'],
   turbopack: {
     root: path.resolve(dirname),
   },
